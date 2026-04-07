@@ -1,0 +1,33 @@
+:root {
+  --ghost-accent-color: #71b129;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-content .kg-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.post-content .kg-gallery-row {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.post-content .kg-gallery-image img {
+  width: 100%;
+  height: auto;
+}
+
+.gatsby-resp-image-wrapper {
+  max-width: 100% !important;
+}
+
+.navbar-menu .nav li a.active {
+  color: var(--ghost-accent-color);
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, withPrefix } from "gatsby"
 import Layout from "../components/Layout"
 import PostCard from "../components/PostCard"
 
@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
           <div className="hero bg-dark bg-full">
             <img
               className="hero-image bg-full-image bg-fade-in"
-              src={coverImage}
+              src={withPrefix(coverImage)}
               alt=""
             />
             <div className="hero-inside inner">

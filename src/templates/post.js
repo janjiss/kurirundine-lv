@@ -1,6 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, withPrefix } from "gatsby"
 import Layout from "../components/Layout"
+
+const prefixImages = (html) =>
+  html.replace(/src="\/content\//g, `src="${withPrefix("/content/")}`)
 
 const PostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
@@ -40,7 +43,7 @@ const PostTemplate = ({ data, pageContext }) => {
                 {feature_image && (
                   <img
                     className="bg-full-image bg-fade-in"
-                    src={feature_image}
+                    src={withPrefix(feature_image)}
                     alt={title}
                   />
                 )}
@@ -74,7 +77,7 @@ const PostTemplate = ({ data, pageContext }) => {
 
             <div
               className="post-content"
-              dangerouslySetInnerHTML={{ __html: post.html }}
+              dangerouslySetInnerHTML={{ __html: prefixImages(post.html) }}
             />
 
             <footer className="post-footer inner">
@@ -97,7 +100,7 @@ const PostTemplate = ({ data, pageContext }) => {
                 {nextPost.frontmatter.feature_image && (
                   <img
                     className="post-card-image bg-full-image bg-fade-in"
-                    src={nextPost.frontmatter.feature_image}
+                    src={withPrefix(nextPost.frontmatter.feature_image)}
                     alt={nextPost.frontmatter.title}
                     loading="lazy"
                   />
@@ -120,7 +123,7 @@ const PostTemplate = ({ data, pageContext }) => {
                 {prevPost.frontmatter.feature_image && (
                   <img
                     className="post-card-image bg-full-image bg-fade-in"
-                    src={prevPost.frontmatter.feature_image}
+                    src={withPrefix(prevPost.frontmatter.feature_image)}
                     alt={prevPost.frontmatter.title}
                     loading="lazy"
                   />

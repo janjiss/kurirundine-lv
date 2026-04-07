@@ -16,7 +16,6 @@ const Layout = ({ children, title, description }) => {
   `)
 
   const siteTitle = data.site.siteMetadata.title
-  const siteDescription = data.site.siteMetadata.description
 
   return (
     <>
@@ -30,19 +29,6 @@ const Layout = ({ children, title, description }) => {
                   <Link to="/">{siteTitle}</Link>
                 </h1>
               </div>
-              <nav className="navbar-menu" aria-label="Main Navigation">
-                <ul className="nav">
-                  <li className="nav-item">
-                    <Link to="/" activeClassName="active">Sākums</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/about/" activeClassName="active">Par mums</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/contact/" activeClassName="active">Kontakti</Link>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
         </header>

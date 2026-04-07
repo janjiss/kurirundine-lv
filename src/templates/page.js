@@ -3,7 +3,8 @@ import { graphql, withPrefix } from "gatsby"
 import Layout from "../components/Layout"
 
 const prefixImages = (html) =>
-  html.replace(/src="\/content\//g, `src="${withPrefix("/content/")}`)
+  html.replace(/(src|srcset)="\/content\//g, `$1="${withPrefix("/content/")}`)
+      .replace(/, \/content\//g, `, ${withPrefix("/content/")}`)
 
 const PageTemplate = ({ data }) => {
   const page = data.markdownRemark

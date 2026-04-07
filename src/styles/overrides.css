@@ -2,32 +2,142 @@
   --ghost-accent-color: #71b129;
 }
 
+/* Post content images - ensure proper sizing and centering */
 .post-content img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+.post-content p > img {
+  margin: 1.5rem auto;
+}
+
+.post-content > p > img:only-child {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Ghost gallery cards */
+.post-content .kg-gallery-card {
+  grid-column: wide-start / wide-end;
 }
 
 .post-content .kg-gallery-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .post-content .kg-gallery-row {
   display: flex;
-  gap: 0.5rem;
-  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3px;
+}
+
+.post-content .kg-gallery-image {
+  flex: 1;
+  min-width: 0;
 }
 
 .post-content .kg-gallery-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
 }
 
-.gatsby-resp-image-wrapper {
-  max-width: 100% !important;
+.post-content .kg-gallery-card figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  padding: 0 1rem;
 }
 
+/* Ghost image card */
+.post-content .kg-image-card {
+  margin: 1.5rem 0;
+}
+
+.post-content .kg-image-card img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .kg-image-card.kg-width-wide {
+  grid-column: wide-start / wide-end;
+}
+
+.post-content .kg-image-card.kg-width-full {
+  grid-column: full-start / full-end;
+}
+
+.post-content .kg-width-wide img,
+.post-content .kg-width-full img {
+  width: 100%;
+}
+
+/* Ghost embed / HTML cards */
+.post-content .kg-embed-card {
+  margin: 1.5rem 0;
+}
+
+.post-content .kg-embed-card iframe {
+  max-width: 100%;
+}
+
+.post-content iframe {
+  max-width: 100%;
+  margin: 1.5rem 0;
+}
+
+/* Figcaption styling */
+.post-content figcaption {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Ensure figure elements display properly */
+.post-content figure {
+  margin: 2rem 0;
+}
+
+/* Lists inside post content */
+.post-content ul,
+.post-content ol {
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+  border-left: 3px solid var(--ghost-accent-color);
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* Links in content */
+.post-content a {
+  color: var(--ghost-accent-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.post-content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Active nav link */
 .navbar-menu .nav li a.active {
   color: var(--ghost-accent-color);
 }

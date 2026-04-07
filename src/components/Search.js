@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from "react"
-import { useStaticQuery, graphql, Link, withPrefix } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const Search = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState("")
@@ -121,7 +121,7 @@ const Search = ({ isOpen, onClose }) => {
                 {f.feature_image && (
                   <Link to={`/${f.slug}/`} style={{ flexShrink: 0 }}>
                     <img
-                      src={withPrefix(f.feature_image)}
+                      src={f.feature_image}
                       alt={f.title}
                       loading="lazy"
                       style={{

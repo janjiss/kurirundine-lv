@@ -1,10 +1,6 @@
 import React from "react"
-import { graphql, withPrefix } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-
-const prefixImages = (html) =>
-  html.replace(/(src|srcset)="\/content\//g, `$1="${withPrefix("/content/")}`)
-      .replace(/, \/content\//g, `, ${withPrefix("/content/")}`)
 
 const PageTemplate = ({ data }) => {
   const page = data.markdownRemark
@@ -25,7 +21,7 @@ const PageTemplate = ({ data }) => {
 
             <div
               className="post-content"
-              dangerouslySetInnerHTML={{ __html: prefixImages(page.html) }}
+              dangerouslySetInnerHTML={{ __html: page.html }}
             />
           </article>
         </div>

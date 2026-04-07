@@ -23,7 +23,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npx gatsby build --prefix-paths
+      - run: npx gatsby build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public

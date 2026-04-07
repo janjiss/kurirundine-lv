@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/kurirundine-lv",
   siteMetadata: {
     title: "Kur ir Undīne?",
     description: "Mēs, Undīne un Jānis, esam atgriezušies no gada Latīņamerikā. Un ceļojumi turpinās - šeit atradīsi mūsu piedzīvojumu stāstus un noderīgus padomus savu ceļojumu plānošanai.",

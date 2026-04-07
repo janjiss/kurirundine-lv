@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, withPrefix } from "gatsby"
+import { Link } from "gatsby"
 
 const PostCard = ({ post }) => {
   const { title, slug, date, feature_image, tags, authors } = post
@@ -23,7 +23,7 @@ const PostCard = ({ post }) => {
       {feature_image && (
         <img
           className="post-card-image bg-full-image bg-fade-in"
-          src={withPrefix(feature_image)}
+          src={feature_image}
           alt={title}
           loading="lazy"
         />

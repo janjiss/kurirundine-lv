@@ -1,10 +1,6 @@
 import React from "react"
-import { graphql, Link, withPrefix } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
-
-const prefixImages = (html) =>
-  html.replace(/(src|srcset)="\/content\//g, `$1="${withPrefix("/content/")}`)
-      .replace(/, \/content\//g, `, ${withPrefix("/content/")}`)
 
 const PostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
@@ -44,7 +40,7 @@ const PostTemplate = ({ data, pageContext }) => {
                 {feature_image && (
                   <img
                     className="bg-full-image bg-fade-in"
-                    src={withPrefix(feature_image)}
+                    src={feature_image}
                     alt={title}
                   />
                 )}
@@ -78,7 +74,7 @@ const PostTemplate = ({ data, pageContext }) => {
 
             <div
               className="post-content"
-              dangerouslySetInnerHTML={{ __html: prefixImages(post.html) }}
+              dangerouslySetInnerHTML={{ __html: post.html }}
             />
 
             <footer className="post-footer inner">
@@ -101,7 +97,7 @@ const PostTemplate = ({ data, pageContext }) => {
                 {nextPost.frontmatter.feature_image && (
                   <img
                     className="post-card-image bg-full-image bg-fade-in"
-                    src={withPrefix(nextPost.frontmatter.feature_image)}
+                    src={nextPost.frontmatter.feature_image}
                     alt={nextPost.frontmatter.title}
                     loading="lazy"
                   />
@@ -124,7 +120,7 @@ const PostTemplate = ({ data, pageContext }) => {
                 {prevPost.frontmatter.feature_image && (
                   <img
                     className="post-card-image bg-full-image bg-fade-in"
-                    src={withPrefix(prevPost.frontmatter.feature_image)}
+                    src={prevPost.frontmatter.feature_image}
                     alt={prevPost.frontmatter.title}
                     loading="lazy"
                   />
